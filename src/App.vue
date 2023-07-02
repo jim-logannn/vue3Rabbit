@@ -2,10 +2,6 @@
 </script>
 
 <template>
-  一级路由出口组件
-  <div class="test">
-    test scss
-  </div>
   <router-view></router-view>
 </template>
 

@@ -1,6 +1,11 @@
+<script setup>
+import LayoutNav from './components/LayoutNav.vue'
+import LayoutHeader from './components/LayoutHeader.vue'
+import LayoutFooter from './components/LayoutFooter.vue'
+</script>
 <template>
-    <div>首页</div>
-    <router-link to="/">Home</router-link>
-    <router-link to="/category">Category</router-link>
-    <router-view></router-view>
+    <LayoutNav />
+    <LayoutHeader />
+    <RouterView />
+    <LayoutFooter />
 </template>
