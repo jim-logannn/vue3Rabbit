@@ -1,4 +1,5 @@
 <script setup>
+
 </script>
 
 <template>
@@ -9,11 +10,11 @@
       </h1>
       <ul class="app-header-nav">
         <li class="home">
-            <router-link to="/">首页</router-link>
+          <RouterLink to="/">首页</RouterLink>
         </li>
-        <li><router-link to="/">居家</router-link></li>
-        <li><router-link to="/">美食</router-link></li>
-        <li><router-link to="/">服饰</router-link></li>
+        <li> <RouterLink to="/">居家</RouterLink> </li>
+        <li> <RouterLink to="/">美食</RouterLink> </li>
+        <li> <RouterLink to="/">服饰</RouterLink> </li>
       </ul>
       <div class="search">
         <i class="iconfont icon-search"></i>
@@ -21,7 +22,7 @@
       </div>
       <!-- 头部购物车 -->
     </div>
-</header>
+  </header>
 </template>
 
 
@@ -46,6 +47,36 @@
     }
   }
 
+  .app-header-nav {
+    width: 820px;
+    display: flex;
+    padding-left: 40px;
+    position: relative;
+    z-index: 998;
+  
+    li {
+      margin-right: 40px;
+      width: 38px;
+      text-align: center;
+  
+      a {
+        font-size: 16px;
+        line-height: 32px;
+        height: 32px;
+        display: inline-block;
+  
+        &:hover {
+          color: $xtxColor;
+          border-bottom: 1px solid $xtxColor;
+        }
+      }
+  
+      .active {
+        color: $xtxColor;
+        border-bottom: 1px solid $xtxColor;
+      }
+    }
+  }
 
   .search {
     width: 170px;
