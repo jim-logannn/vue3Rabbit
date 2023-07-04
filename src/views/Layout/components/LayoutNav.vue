@@ -1,4 +1,3 @@
-```vue
 <script setup>
 
 </script>
@@ -64,4 +63,3 @@
   }
 }
 </style>
-```
