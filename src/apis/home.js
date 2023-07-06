@@ -5,3 +5,9 @@ export function getHomeBannerApi(){
         url:"/home/banner"
     })
 }
+
+export function getHomeNewApi(){
+    return httpInstance({
+        url:"/home/new"
+    })
+}
