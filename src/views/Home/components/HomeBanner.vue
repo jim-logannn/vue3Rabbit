@@ -1,6 +1,6 @@
 <script setup>
-import { onMounted, ref } from 'vue'
 import {getHomeBannerApi} from "@/apis/home.js"
+import { onMounted, ref } from "vue"
 const bannerData=ref([])
 const getHomeBanner=async()=>{
   const {result:res}=await getHomeBannerApi()
