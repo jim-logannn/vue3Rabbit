@@ -11,3 +11,9 @@ export function getHomeNewApi(){
         url:"/home/new"
     })
 }
+
+export function getHotAPI(){
+    return httpInstance({
+        url:"/home/hot"
+    })
+}
