@@ -5,7 +5,6 @@ import { ref } from 'vue'
 const hotList = ref([])
 const getHotList = async () => {
   const {result:res} = await getHotAPI()
-  console.log(res.picture);
   hotList.value = res
 }
 getHotList()
