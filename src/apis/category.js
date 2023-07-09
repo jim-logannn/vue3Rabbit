@@ -8,3 +8,13 @@ export function getCategoryApi(id){
         }
     })
 }
+
+//二级分类列表数据
+export const getCategoryFilterApi=(id)=>{
+    return  httpInstance({
+        url:"/category/sub/filter",
+        params:{
+            id
+        }
+    })
+}
