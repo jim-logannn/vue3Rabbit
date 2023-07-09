@@ -10,7 +10,6 @@ import { onMounted } from 'vue'
 const categoryStore=useCategoryStore()
 onMounted(()=>{
   const res=categoryStore.getCateGory()
-  console.log(res);
 })
 </script>
 
