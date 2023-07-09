@@ -1,8 +1,13 @@
 import httpInstance from "@/utils/http"
 
-export function getHomeBannerApi(){
+export function getHomeBannerApi(params={}){
+    //默认为1 商品为2
+    const {distributionStie="1"}=params
     return httpInstance({
-        url:"/home/banner"
+        url:"/home/banner",
+        params:{
+            distributionStie
+        }
     })
 }
 
