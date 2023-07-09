@@ -7,8 +7,6 @@ const goodList=ref([])
 const getProduct=async()=>{
     const {result:res}=await getProductApi()
     goodList.value=res
-    console.log("__________");
-    console.log(res);
 }
 onMounted(()=>{
     getProduct()
