@@ -4,11 +4,12 @@ import { onMounted, ref } from "vue";
 import {useRoute} from "vue-router"
 import GoodItem from "../Home/components/GoodItem.vue"
 const route=useRoute()
+console.log("-------------");
+console.log(route.params);
 const CategoryData=ref([])
 const getCategoryFilter=async ()=>{
     const {result:res}=await getCategoryFilterApi(route.params.id)
     CategoryData.value=res
-    console.log(res);
 }
 onMounted(()=>{
     getCategoryFilter()
