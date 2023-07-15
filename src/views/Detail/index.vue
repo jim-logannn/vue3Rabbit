@@ -1,4 +1,5 @@
 <script setup>
+import DetailHot from "./components/DetailHot.vue"
 import { getDetail } from "@/apis/detail.js";
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
@@ -16,6 +17,7 @@ onMounted(()=>{
 
 <template>
   <div class="xtx-goods-page">
+    <!-- 此处v-if 等待goods不是空对象时才渲染数据 -->
     <div class="container" v-if="goods.details">
       <div class="bread-container">
         <el-breadcrumb separator=">">
@@ -123,7 +125,7 @@ onMounted(()=>{
             </div>
             <!-- 24热榜+专题推荐 -->
             <div class="goods-aside">
-
+              <DetailHot></DetailHot>
             </div>
           </div>
         </div>

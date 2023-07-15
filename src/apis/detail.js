@@ -8,3 +8,12 @@ export function getDetail(id){
         }
     })
 }
+
+export function getHotGoodsAPI({id,type,limit=3}){
+    return httpInstance({
+        url:"/goods/hot",
+        id,
+        type,
+        limit
+    })
+}
