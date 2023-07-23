@@ -1,7 +1,9 @@
 import { defineStore } from "pinia"
 import { ref } from "vue"
 export const useCartStroe=defineStore("cart",()=>{
+    //定义state
     const cartList=ref([])
+    //定义action
     const addCart=(goods)=>{
         //添加购物车操作
         //已经添加过：count+1
@@ -15,9 +17,18 @@ export const useCartStroe=defineStore("cart",()=>{
             cartList.value.push(goods)
         }
     }
+    //删除购物车
+    const delCart=(skuId)=>{
+        // 思路：
+        // 1.找到要删除项的下标值 - splace
+        // 2.使用数组的过滤方法 - filter
+        const idx=cartList.value.findIndex((item)=>{return skuId===item.skuId})
+        cartList.value.splice(idx,1)
+    }
     return{
         cartList,
-        addCart
+        addCart,
+        delCart
     }
 },{
     persist:true
