@@ -1,5 +1,5 @@
 import { defineStore } from "pinia"
-import { ref } from "vue"
+import { computed, ref } from "vue"
 export const useCartStroe=defineStore("cart",()=>{
     //定义state
     const cartList=ref([])
@@ -25,10 +25,22 @@ export const useCartStroe=defineStore("cart",()=>{
         const idx=cartList.value.findIndex((item)=>{return skuId===item.skuId})
         cartList.value.splice(idx,1)
     }
+
+    //计算属性
+    // 1.总的数量 所有项的count之和
+    const allCount=computed(()=>{
+        return cartList.value.reduce((a,c)=>a+c.count,0)
+    })
+    // 2. 总价 所有项的count*price之和
+    const allPrice=computed(()=>{
+        return cartList.value.reduce((a,c)=>a+c.count*c.price,0)
+    })
     return{
         cartList,
         addCart,
-        delCart
+        delCart,
+        allCount,
+        allPrice
     }
 },{
     persist:true
