@@ -48,6 +48,11 @@ export const useCartStroe=defineStore("cart",()=>{
        }
     }
 
+    //退出登录清除购物车
+    const clearCart=()=>{
+        cartList.value=[]
+    }
+
     //单选功能
     const singleCheck=(skuId,selected)=>{
         //通过skuID找到要修改的那一项，然后把它的selected修改为传过来的selected
@@ -97,6 +102,7 @@ export const useCartStroe=defineStore("cart",()=>{
         selectAll,
         selectedCount,
         selectedPrice,
+        clearCart
     }
 },{
     persist:true
