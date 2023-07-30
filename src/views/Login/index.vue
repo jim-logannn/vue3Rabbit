@@ -5,7 +5,7 @@ import { ref } from "vue";
 import 'element-plus/theme-chalk/el-message.css'
 import { ElMessage } from 'element-plus'
 import {useRouter} from "vue-router"
-import {useUserStore} from "@/stores/user.js"
+import {useUserStore} from "@/stores/userStore.js"
 
 const userStore=useUserStore()
 
