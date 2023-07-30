@@ -10,6 +10,10 @@ const singleCheck=(i,selected)=>{
     // 除了selected补充一个用来筛选的参数-skuID
     cartStore.singleCheck(i.skuId,selected)
 }
+
+const selecteAll=(selected)=>{
+  cartStore.selectAll(selected)
+}
 </script>
 
 <template>
@@ -20,7 +24,7 @@ const singleCheck=(i,selected)=>{
           <thead>
             <tr>
               <th width="120">
-                <el-checkbox/>
+                <el-checkbox @change="selecteAll" :model-value="cartStore.isAll" />
               </th>
               <th width="400">商品信息</th>
               <th width="220">单价</th>

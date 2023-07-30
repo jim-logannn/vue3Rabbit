@@ -42,13 +42,26 @@ export const useCartStroe=defineStore("cart",()=>{
     const allPrice=computed(()=>{
         return cartList.value.reduce((a,c)=>a+c.count*c.price,0)
     })
+
+    // 是否全选
+    const isAll=computed(()=>{
+        return cartList.value.every((item)=>{
+            return item.selected
+        })
+    })
+
+    const selectAll=(selected)=>{
+        cartList.value.forEach(item=>item.selected=selected)
+    }
     return{
         cartList,
         addCart,
         delCart,
         allCount,
         allPrice,
-        singleCheck
+        singleCheck,
+        isAll,
+        selectAll
     }
 },{
     persist:true
