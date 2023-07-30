@@ -50,9 +50,20 @@ export const useCartStroe=defineStore("cart",()=>{
         })
     })
 
+    //全选功能
     const selectAll=(selected)=>{
         cartList.value.forEach(item=>item.selected=selected)
     }
+
+    // 已选择数量
+    const selectedCount=computed(()=>{
+        return cartList.value.filter(item=>item.selected).reduce((a,c)=>a+c.count,0)
+    })
+    // 已选择商品加钱合计
+    const selectedPrice=computed(()=>{
+        return cartList.value.filter(item=>item.selected).reduce((a,c)=>a+c.count*c.price,0)
+    })
+
     return{
         cartList,
         addCart,
@@ -61,7 +72,9 @@ export const useCartStroe=defineStore("cart",()=>{
         allPrice,
         singleCheck,
         isAll,
-        selectAll
+        selectAll,
+        selectedCount,
+        selectedPrice
     }
 },{
     persist:true
