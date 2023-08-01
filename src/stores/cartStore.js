@@ -102,7 +102,8 @@ export const useCartStroe=defineStore("cart",()=>{
         selectAll,
         selectedCount,
         selectedPrice,
-        clearCart
+        clearCart,
+        updateNewList
     }
 },{
     persist:true
