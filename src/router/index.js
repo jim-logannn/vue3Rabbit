@@ -59,7 +59,8 @@ const router = createRouter({
           component:Member,
           children:[
             {
-              path:"user",
+              // 路径置空，当进入member时自动跳转到当前UserInfo组件
+              path:"",
               component:UserInfo
             },
             {
